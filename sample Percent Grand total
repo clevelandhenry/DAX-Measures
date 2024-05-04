@@ -1,0 +1,6 @@
+%FTETerm = 
+VAR _PercentFTETerm = [FTE Term]
+VAR _PFT = CALCULATE([FTE Term],ALL('FY24 Employee Data'))
+
+RETURN
+DIVIDE(_PercentFTETerm,_PFT)
