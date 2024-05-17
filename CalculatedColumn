@@ -1,0 +1,6 @@
+AwardsPerRecipient_Inception = CALCULATE(
+    COUNT('Civil Spend Report'[AwardCount]),
+    FILTER('Civil Spend Report',
+    'Civil Spend Report'[Recipient Employee ID] = EARLIER('Civil Spend Report'[Recipient Employee ID])
+    )
+    )
