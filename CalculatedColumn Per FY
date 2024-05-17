@@ -1,0 +1,8 @@
+AwardsPerRecipientPerFiscalYear = 
+CALCULATE(
+    SUM('Civil Spend Report'[AwardCount]),
+    FILTER('Civil Spend Report',
+    'Civil Spend Report'[Recipient Employee ID] = EARLIER('Civil Spend Report'[Recipient Employee ID])
+    && 'Civil Spend Report'[Fiscal Year] = EARLIER('Civil Spend Report'[Fiscal Year])
+    )
+)
