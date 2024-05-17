@@ -1,0 +1,11 @@
+TitleSelectedValue + Terminations = 
+VAR _AccountGroup = SELECTEDVALUE(dimEmployeeInfo[Account Group],"Civil Group")
+VAR _Officer = SELECTEDVALUE(dimEmployeeInfo[Officer])
+VAR _VicePresident = SELECTEDVALUE(dimEmployeeInfo[Vice President])
+
+RETURN
+IF(
+    NOT(ISBLANK(_VicePresident)),
+    _AccountGroup & " " &_VicePresident & " Terminations",
+    _AccountGroup & " " & _Officer & " " & _VicePresident & " Terminations"
+)
