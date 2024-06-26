@@ -4,3 +4,11 @@ VAR _PFT = CALCULATE([FTE Term],ALL('FY24 Employee Data'))
 
 RETURN
 DIVIDE(_PercentFTETerm,_PFT)
+
+***********IMPORTANT***************
+Filter Propagation:
+When you use a measure that references a dimension table (like your [Total 9 Box Population]), the filter context from the dimension table affects the calculation.
+
+Using ALLSELECTED:
+Instead of ALL, consider using ALLSELECTED. This function removes filters from the specified table while still considering any slicer selections or other active filters.
+Here, ALLSELECTED ensures that slicer filters on '9Box_BAH1383' are respected while ignoring other filters.
