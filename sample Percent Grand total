@@ -12,3 +12,6 @@ When you use a measure that references a dimension table (like your [Total 9 Box
 Using ALLSELECTED:
 Instead of ALL, consider using ALLSELECTED. This function removes filters from the specified table while still considering any slicer selections or other active filters.
 Here, ALLSELECTED ensures that slicer filters on '9Box_BAH1383' are respected while ignoring other filters.
+
+******IMPORTANT***********
+Use SUM function (vs Count) - add additional column = 1.0 for 9bixcount
