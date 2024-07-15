@@ -1,0 +1,6 @@
+Index = RANKX(
+ALLSELECTED('9Box_bah1383'[Employee]),
+'9Box_bah1383'[Employee],
+,ASC,
+Dense
+)
