@@ -1,0 +1,4 @@
+As of Date = CALCULATE(
+    MAX('FY25 CIVIL Awards Spend'[Date]),
+    ALL('FY25 CIVIL Awards Spend')
+)
