@@ -1,0 +1,1 @@
+8|9 Box = COALESCE(CALCULATE([TotalPlotted],dim9Box[9Box_ID] IN {8,9}), 0)
