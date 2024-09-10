@@ -1,0 +1,8 @@
+AwardsPerRecipient_Inception = CALCULATE(
+    COUNT('FY25 CIVIL Awards Spend'[AwardCount]),
+    FILTER('FY25 CIVIL Awards Spend',
+    'FY25 CIVIL Awards Spend'[Recipient Employee ID] = EARLIER('FY25 CIVIL Awards Spend'[Recipient Employee ID])
+    )
+    )
+-------------------------------
+Must add column "Award Count" = 1 (power query) 
