@@ -1,0 +1,4 @@
+CSE FY23 Term Rate = CALCULATE(
+    SUM('CSE Trend Data'[Value]),
+    FILTER(ALL('CSE Trend Data'), 'CSE Trend Data'[Fiscal Year] = "FY23")
+)
