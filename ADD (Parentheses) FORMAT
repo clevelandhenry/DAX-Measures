@@ -1,0 +1,3 @@
+CSE FY23 Term Rate = 
+VAR TermRate = CALCULATE(SUM('CSE Trend Data'[Value]), FILTER('CSE Trend Data', [Fiscal Year] = "FY23" && [Trend] = "Total Term Rate"))
+RETURN "(" & FORMAT(TermRate, "0.00") & ")"
