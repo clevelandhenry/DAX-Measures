@@ -10,3 +10,11 @@ FTE Term (   ) =
 VAR _FTETERM = [FTE Term]
 RETURN
 "(" &_FTETERM & ")"
+
+---------------------------
+%FTE Term (   ) = 
+VAR _PercentFTETerm = [FTE Term]
+VAR _PFT = CALCULATE([FTE Term],ALLSELECTED('FY25 Employee Status'))
+
+RETURN
+"(" & FORMAT(DIVIDE(_PercentFTETerm, _PFT), "0.0%") & ")"
