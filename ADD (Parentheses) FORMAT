@@ -4,3 +4,9 @@ RETURN "(" & FORMAT(TermRate, "0.00") & ")"
 ---------------------------
 *CONVERT TO %
 RETURN "(" & FORMAT(_TermRate * 100, "0.0") &  "%)"
+
+------------------------
+FTE Term (   ) = 
+VAR _FTETERM = [FTE Term]
+RETURN
+"(" &_FTETERM & ")"
