@@ -14,4 +14,4 @@ Instead of ALL, consider using ALLSELECTED. This function removes filters from t
 Here, ALLSELECTED ensures that slicer filters on '9Box_BAH1383' are respected while ignoring other filters.
 
 ******IMPORTANT***********
-Use SUM function (vs Count) - add additional column = 1.0 for 9bixcount
+Use SUM function (vs Count) - add additional column = 1.0 for 9boxcount
