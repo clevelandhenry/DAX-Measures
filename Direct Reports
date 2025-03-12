@@ -1,0 +1,14 @@
+Direct Reports = 
+VAR _CurrentEmplID = dimSpanofControl_1088[Empl ID]
+RETURN
+CALCULATE(
+    COUNTROWS(dimSpanofControl_1088),
+    ALL(dimSpanofControl_1088),
+    dimSpanofControl_1088[Mgr ID] = _CurrentEmplID
+) + 0
+
+--------------MUST ADD ROW IN POWER QUERY ---------
+
+= Table.InsertRows(SortEmployee_Table,0,
+{[Employee = "Richard Crowe", Manager = "Richard Crowe", Empl ID = "518808", Mgr ID = "518808"]}
+ )
