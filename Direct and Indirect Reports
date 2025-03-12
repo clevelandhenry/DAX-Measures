@@ -1,3 +1,8 @@
+
+EmplPath = 
+PATH(dimSpanofControl[Empl ID], dimSpanofControl[Mgr ID])
+
+---------------------------------------------
 Direct Reports = 
 VAR _CurrentEmplID = dimSpanofControl_1088[Empl ID]
 RETURN
