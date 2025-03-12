@@ -1,4 +1,10 @@
+--------------MUST ADD ROW IN POWER QUERY ---------
 
+= Table.InsertRows(SortEmployee_Table,0,
+{[Employee = "Richard Crowe", Manager = "Richard Crowe", Empl ID = "518808", Mgr ID = "518808"]}
+ )
+
+----------------------------------
 EmplPath = 
 PATH(dimSpanofControl[Empl ID], dimSpanofControl[Mgr ID])
 
@@ -11,9 +17,16 @@ CALCULATE(
     ALL(dimSpanofControl_1088),
     dimSpanofControl_1088[Mgr ID] = _CurrentEmplID
 ) + 0
+----------------------------
+Total Reports = 
+VAR _CurrentEmployeeID = dimSpanofControl[Empl ID]
+RETURN
+CALCULATE(
+    COUNTROWS(dimSpanofControl),
+    ALL(dimSpanofControl),
+    PATHCONTAINS(dimSpanofControl[EmplPath], _CurrentEmployeeID),
+    dimSpanofControl[Empl ID] <> _CurrentEmployeeID
+) + 0
 
---------------MUST ADD ROW IN POWER QUERY ---------
 
-= Table.InsertRows(SortEmployee_Table,0,
-{[Employee = "Richard Crowe", Manager = "Richard Crowe", Empl ID = "518808", Mgr ID = "518808"]}
- )
+
