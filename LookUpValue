@@ -1,0 +1,27 @@
+ManagementLevel = 
+  VAR Direct =
+  LOOKUPVALUE(
+    dimBAH1088[Management Level],
+    dimBAH1088[Empl ID], SELECTEDVALUE(CustomHierarchy[DirectID])
+  )
+
+  VAR IND2 =
+  LOOKUPVALUE(
+    dimBAH1088[Management Level],
+    dimBAH1088[Empl ID], SELECTEDVALUE(CustomHierarchy[Ind2ID])
+  )
+
+ VAR IND3 =
+  LOOKUPVALUE(
+    dimBAH1088[Management Level],
+    dimBAH1088[Empl ID], SELECTEDVALUE(CustomHierarchy[Ind3ID])
+  )
+
+RETURN
+SWITCH(
+    TRUE(),
+    ISINSCOPE(CustomHierarchy[DirectID]), Direct,
+    ISINSCOPE(CustomHierarchy[Ind2ID]), IND2,
+    ISINSCOPE(CustomHierarchy[Ind3ID]), IND3,
+    BLANK()
+)
