@@ -9,7 +9,7 @@ Calendar = ADDCOLUMNS(
     "Quarter Number", "Q" & QUARTER([Date]),
 
     "Year Month", YEAR([Date]) & " " & FORMAT([Date], "Mmmm"),
-    "Year Month Sort", YEAR([Date]) & QUARTER([Date]),
+    "Year Quarter Sort", YEAR([Date]) & QUARTER([Date]),
 
     "Fiscal Year", "FY" & " " & YEAR(EDATE([Date], 9)),
     "Fiscal Quarter", "Qtr" & " " & QUARTER(EDATE([Date], 9)),
